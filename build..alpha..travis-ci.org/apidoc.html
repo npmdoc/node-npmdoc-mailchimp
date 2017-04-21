@@ -1,0 +1,968 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >mailchimp (v1.2.0)</a>
+</h1>
+<h4>A node.js wrapper for the MailChimp API.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailchimp">module mailchimp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpAPI">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpAPI
+            <span class="apidocSignatureSpan">(apiKey, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpExportAPI">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpExportAPI
+            <span class="apidocSignatureSpan">(apiKey, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpOAuth
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpPartnerAPI">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpPartnerAPI
+            <span class="apidocSignatureSpan">(appKey, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpWebhook">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpWebhook
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MandrillAPI">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MandrillAPI
+            <span class="apidocSignatureSpan">(apiKey, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">mailchimp.</span>MailChimpOAuth.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailchimp.MailChimpOAuth">module mailchimp.MailChimpOAuth</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.MailChimpOAuth">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpOAuth
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.super_">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailchimp.MailChimpOAuth.prototype">module mailchimp.MailChimpOAuth.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getAccessToken">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getAccessToken
+            <span class="apidocSignatureSpan">(customParams)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getAuthorizeUri">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getAuthorizeUri
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getMetadata">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getMetadata
+            <span class="apidocSignatureSpan">(customParams)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.handleOAuthResponse">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>handleOAuthResponse
+            <span class="apidocSignatureSpan">(customParams)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.spawnServer">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>spawnServer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.mailchimp.MailChimpWebhook">module mailchimp.MailChimpWebhook</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpWebhook.MailChimpWebhook">
+            function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpWebhook
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.mailchimp.MailChimpWebhook.super_">
+            function <span class="apidocSignatureSpan">mailchimp.MailChimpWebhook.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailchimp" id="apidoc.module.mailchimp">module mailchimp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpAPI" id="apidoc.element.mailchimp.MailChimpAPI">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpAPI
+        <span class="apidocSignatureSpan">(apiKey, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpAPI(apiKey, options) {
+
+	if (!options)
+		var options = {};
+
+	if (!apiKey)
+		throw new Error(&#x27;You have to provide an API key for this to work.&#x27;);
+
+	try {
+		var packageInfo = fs.readFileSync(__dirname+&#x22;/../../package.json&#x22;);
+	} catch (error) {
+		throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+	}
+	options.packageInfo = JSON.parse(packageInfo.toString());
+
+	if (!options.version || options.version == &#x27;1.3&#x27;)
+		return new MailChimpAPI_v1_3(apiKey, options);
+	else if (options.version == &#x27;2.0&#x27;)
+		return new MailChimpAPI_v2_0(apiKey, options);
+	else if (options.version == &#x27;1.2&#x27;)
+		return new MailChimpAPI_v1_2(apiKey, options);
+	else if (options.version == &#x27;1.1&#x27;)
+		return new MailChimpAPI_v1_1(apiKey, options);
+	else
+		throw new Error(&#x27;Version &#x27; + options.version + &#x27; of the MailChimp API is currently not supported.&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpExportAPI" id="apidoc.element.mailchimp.MailChimpExportAPI">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpExportAPI
+        <span class="apidocSignatureSpan">(apiKey, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpExportAPI(apiKey, options) {
+
+  if (!options)
+    var options = {};
+
+  if (!apiKey)
+    throw new Error(&#x27;You have to provide an API key for this to work.&#x27;);
+
+  try {
+    var packageInfo = fs.readFileSync(__dirname+&#x22;/../../package.json&#x22;);
+  } catch (error) {
+    throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+  }
+  options.packageInfo = JSON.parse(packageInfo.toString());
+
+  if (!options.version || options.version == &#x27;1.0&#x27;)
+    return new MailChimpExportAPI_v1_0(apiKey, options);
+  else
+    throw new Error(&#x27;Version &#x27; + options.version + &#x27; of the MailChimp Export API is currently not supported.&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth" id="apidoc.element.mailchimp.MailChimpOAuth">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpOAuth
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpOAuth(options) {
+
+  var self = this;
+  options = options || {};
+
+  EventEmitter.call(this);
+
+  this.httpPort = options.port || 8100;
+  this.spawnServerFlag = options.ownServer || false;
+  this.secure = options.secure || false;
+  this.finalUri = options.finalUri || false;
+  this.addPort = options.addPort || false;
+  if (typeof options.clientId !== &#x27;undefined&#x27;) {
+    this.clientId = options.clientId;
+  } else {
+    throw new Error(&#x27;You have to specify the client id for this to work.&#x27;);
+  }
+
+  if (typeof options.clientSecret !== &#x27;undefined&#x27;) {
+    this.clientSecret = options.clientSecret;
+  } else {
+    throw new Error(&#x27;You have to specify the client secret for this to work.&#x27;);
+  }
+
+  if (typeof options.redirectUri !== &#x27;undefined&#x27;) {
+    this.redirectUri = options.redirectUri;
+  } else {
+    throw new Error(&#x27;You have to specify a uri for this server as MailChimp needs to reach it from the outside.&#x27;);
+  }
+
+  try {
+    var packageInfo = fs.readFileSync(__dirname + &#x22;/../../package.json&#x22;);
+  } catch (error) {
+    throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+  }
+    this.packageInfo = JSON.parse(packageInfo.toString());
+
+    this.on(&#x27;receivedCode&#x27;, function (customParams) {
+      self.getAccessToken(customParams);
+    });
+
+    this.on(&#x27;receivedAccessToken&#x27;, function (customParams) {
+      self.getMetadata(customParams);
+    });
+
+    this.on(&#x27;receivedMetadata&#x27;, function (customParams) {
+      self.emit(&#x27;authed&#x27;, customParams);
+    });
+
+    if (this.spawnServerFlag)
+      this.spawnServer();
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpPartnerAPI" id="apidoc.element.mailchimp.MailChimpPartnerAPI">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpPartnerAPI
+        <span class="apidocSignatureSpan">(appKey, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpPartnerAPI(appKey, options) {
+
+	if (!options)
+		var options = {};
+
+	if (!appKey)
+		throw new Error(&#x27;You have to provide an app key for this to work.&#x27;);
+
+	try {
+		var packageInfo = fs.readFileSync(__dirname+&#x22;/../../package.json&#x22;);
+	} catch (error) {
+		throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+	}
+	options.packageInfo = JSON.parse(packageInfo.toString());
+
+	if (!options.version || options.version == &#x27;1.3&#x27;)
+		return new MailChimpPartnerAPI_v1_3(appKey, options);
+	else
+		throw new Error(&#x27;Version &#x27; + options.version + &#x27; of the MailChimp Partner API is currently not supported.&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpWebhook" id="apidoc.element.mailchimp.MailChimpWebhook">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpWebhook
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpWebhook(options) {
+
+	var self = this;
+
+	if (!options)
+		options = {};
+
+	EventEmitter.call(this);
+
+	this.httpPort = options.port || 8100;
+	this.secret = options.secret || &#x27;&#x27;;
+	this.secure = options.secure || false;
+
+	this.allowedTypes = [
+	                     &#x27;subscribe&#x27;,
+	                     &#x27;unsubscribe&#x27;,
+	                     &#x27;profile&#x27;,
+	                     &#x27;upemail&#x27;,
+	                     &#x27;cleaned&#x27;,
+                         &#x27;campaign&#x27;
+	                    ];
+
+	var server = http.createServer(function (request, response) {
+
+		var requestBody = &#x27;&#x27;;
+		var requestUrl = url.parse(request.url);
+
+		if (self.secret !== &#x27;&#x27; &#x26;&#x26; requestUrl.pathname !== &#x27;/&#x27;+self.secret) {
+			self.emit(&#x27;error&#x27;, &#x27;Received a request with an invalid secret key.&#x27;);
+			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+		// Say &#x22;hi&#x22; to the webhook validator, the only request not sent via POST
+		if (request.headers[&#x27;user-agent&#x27;] === &#x27;MailChimp.com WebHook Validator&#x27;) {
+			response.writeHead(200, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+		if (request.method != &#x27;POST&#x27;) {
+			self.emit(&#x27;error&#x27;, &#x27;Received something other than a POST request.&#x27;);
+			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+        request.on(&#x27;data&#x27;, function (chunk) {
+        	requestBody += chunk;
+        });
+
+        request.on(&#x27;end&#x27;, function () {
+
+        	var payload = qs.parse(requestBody);
+    		var meta = { type : payload.type, fired_at : payload.fired_at };
+    		var data = payload.data;
+
+    		if (meta.type &#x26;&#x26; ~self.allowedTypes.indexOf(meta.type)) {
+    			self.emit(payload.type, data, meta);
+    			response.writeHead(200, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+    			response.end();
+    		} else {
+    			self.emit(&#x27;error&#x27;, &#x27;Received a request with an unknown type of payload.&#x27;);
+    			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+    			response.end();
+    		}
+
+        });
+
+	});
+
+	if (this.secure)
+		server.setSecure(this.secure);
+
+	server.listen(this.httpPort);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MandrillAPI" id="apidoc.element.mailchimp.MandrillAPI">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MandrillAPI
+        <span class="apidocSignatureSpan">(apiKey, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MandrillAPI(apiKey, options) {
+
+	if (!options)
+		var options = {};
+
+	if (!apiKey)
+		throw new Error(&#x27;You have to provide an API key for this to work.&#x27;);
+
+	try {
+		var packageInfo = fs.readFileSync(__dirname+&#x22;/../../package.json&#x22;);
+	} catch (error) {
+		throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+	}
+	options.packageInfo = JSON.parse(packageInfo.toString());
+
+	if (!options.version || options.version == &#x27;1.0&#x27;)
+		return new MandrillAPI_v1_0(apiKey, options);
+	else
+		throw new Error(&#x27;Version &#x27; + options.version + &#x27; of the Mandrill API is currently not supported.&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailchimp.MailChimpOAuth" id="apidoc.module.mailchimp.MailChimpOAuth">module mailchimp.MailChimpOAuth</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.MailChimpOAuth" id="apidoc.element.mailchimp.MailChimpOAuth.MailChimpOAuth">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpOAuth
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpOAuth(options) {
+
+  var self = this;
+  options = options || {};
+
+  EventEmitter.call(this);
+
+  this.httpPort = options.port || 8100;
+  this.spawnServerFlag = options.ownServer || false;
+  this.secure = options.secure || false;
+  this.finalUri = options.finalUri || false;
+  this.addPort = options.addPort || false;
+  if (typeof options.clientId !== &#x27;undefined&#x27;) {
+    this.clientId = options.clientId;
+  } else {
+    throw new Error(&#x27;You have to specify the client id for this to work.&#x27;);
+  }
+
+  if (typeof options.clientSecret !== &#x27;undefined&#x27;) {
+    this.clientSecret = options.clientSecret;
+  } else {
+    throw new Error(&#x27;You have to specify the client secret for this to work.&#x27;);
+  }
+
+  if (typeof options.redirectUri !== &#x27;undefined&#x27;) {
+    this.redirectUri = options.redirectUri;
+  } else {
+    throw new Error(&#x27;You have to specify a uri for this server as MailChimp needs to reach it from the outside.&#x27;);
+  }
+
+  try {
+    var packageInfo = fs.readFileSync(__dirname + &#x22;/../../package.json&#x22;);
+  } catch (error) {
+    throw new Error(&#x27;Required package file package.json not found for this module.&#x27;);
+  }
+    this.packageInfo = JSON.parse(packageInfo.toString());
+
+    this.on(&#x27;receivedCode&#x27;, function (customParams) {
+      self.getAccessToken(customParams);
+    });
+
+    this.on(&#x27;receivedAccessToken&#x27;, function (customParams) {
+      self.getMetadata(customParams);
+    });
+
+    this.on(&#x27;receivedMetadata&#x27;, function (customParams) {
+      self.emit(&#x27;authed&#x27;, customParams);
+    });
+
+    if (this.spawnServerFlag)
+      this.spawnServer();
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.super_" id="apidoc.element.mailchimp.MailChimpOAuth.super_">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailchimp.MailChimpOAuth.prototype" id="apidoc.module.mailchimp.MailChimpOAuth.prototype">module mailchimp.MailChimpOAuth.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getAccessToken" id="apidoc.element.mailchimp.MailChimpOAuth.prototype.getAccessToken">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getAccessToken
+        <span class="apidocSignatureSpan">(customParams)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAccessToken = function (customParams) {
+
+  var self = this;
+  customParams = customParams || {};
+  if (!customParams.code) {
+    self.emit(&#x27;error&#x27;, {err: &#x27;Code is required in Params&#x27;, data:customParams});
+    return;
+  }
+  var params = {
+    grant_type: &#x27;authorization_code&#x27;,
+    client_id: this.clientId,
+    client_secret: this.clientSecret,
+    code: customParams.code,
+    redirect_uri: this.addPort ? this.redirectUri + &#x27;:&#x27; + this.httpPort : this.redirectUri
+  };
+
+  request({
+    uri: &#x27;https://login.mailchimp.com/oauth2/token&#x27;,
+    method: &#x27;POST&#x27;,
+    headers: {
+      &#x27;User-Agent&#x27;: &#x27;node-mailchimp/&#x27; + this.packageInfo[&#x27;version&#x27;],
+      &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;
+    },
+    body: querystring.stringify(params)
+  }, function (error, response, body) {
+
+    var parsedResponse;
+
+    if (error) {
+      self.emit(&#x27;error&#x27;, {err: &#x27;Unable to connect to the MailChimp OAuth service.&#x27;, data:customParams});
+    } else {
+
+      try {
+        parsedResponse = JSON.parse(body);
+      } catch (error) {
+        console.log(&#x27;[MailChimp] Error parsing JSON answer from the MailChimp getAccessToken API.&#x27;, body);
+        self.emit(&#x27;error&#x27;, {err: &#x27;Error parsing JSON answer from the MailChimp getAccessToken API.&#x27;, data:customParams});
+        return;
+      }
+
+      if (typeof parsedResponse.access_token !== &#x27;undefined&#x27;) {
+        customParams.accessToken = parsedResponse.access_token;
+        self.emit(&#x27;receivedAccessToken&#x27;, customParams);
+      } else {
+        self.emit(&#x27;error&#x27;, {err: &#x27;Answer from MailChimp API does not contain an access token.&#x27;, data:customParams});
+      }
+
+    }
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getAuthorizeUri" id="apidoc.element.mailchimp.MailChimpOAuth.prototype.getAuthorizeUri">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getAuthorizeUri
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAuthorizeUri = function () {
+
+  var params = {
+    response_type: &#x27;code&#x27;,
+    client_id: this.clientId,
+    redirect_uri: this.addPort ? this.redirectUri + &#x27;:&#x27; + this.httpPort : this.redirectUri
+  };
+
+  return &#x27;https://login.mailchimp.com/oauth2/authorize?&#x27; + querystring.stringify(params);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	ownServer: true,
+	addPort: true,
+	finalUri: &#x27;http://www.example.com/successfulLogin.html&#x27;
+};
+
+var oauth = new MailChimpOAuth(options);
+
+console.log(oauth.<span class="apidocCodeKeywordSpan">getAuthorizeUri</span>()); // The MailChimp login URI the user needs to be
+ sent to
+&#x3c;!-- Error contains custom Data when passed around to know the current status--&#x3e;
+oauth.on(&#x27;error&#x27;, function (error) {
+    console.log(error.err);
+});
+
+oauth.on(&#x27;authed&#x27;, function (data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.getMetadata" id="apidoc.element.mailchimp.MailChimpOAuth.prototype.getMetadata">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>getMetadata
+        <span class="apidocSignatureSpan">(customParams)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getMetadata = function (customParams) {
+
+  var self = this;
+  customParams = customParams || {};
+  if (!customParams.accessToken) {
+    self.emit(&#x27;error&#x27;, {err: &#x27;accessToken is required in Params&#x27;, data:customParams});
+    return;
+  }
+  request({
+    uri: &#x27;https://login.mailchimp.com/oauth2/metadata&#x27;,
+    headers: {
+      &#x27;User-Agent&#x27;: &#x27;node-mailchimp/&#x27; + this.packageInfo[&#x27;version&#x27;],
+      &#x27;Authorization&#x27;: &#x27;OAuth &#x27; + customParams.accessToken
+    }
+  }, function (error, response, body) {
+
+    var parsedResponse;
+
+    if (error) {
+      self.emit(&#x27;error&#x27;, {err: &#x27;Unable to connect to the MailChimp OAuth service.&#x27;, data:customParams});
+      return;
+    } else {
+
+      try {
+        parsedResponse = JSON.parse(body);
+      } catch (error) {
+        console.error(&#x27;[MailChimp] Error parsing JSON answer from the MailChimp getMetadata API.&#x27;, body);
+        self.emit(&#x27;error&#x27;, {err: &#x27;Error parsing JSON answer from the MailChimp getMetadata API.&#x27;, data:customParams});
+        return;
+      }
+
+      if (typeof parsedResponse.dc !== &#x27;undefined&#x27;) {
+        customParams.metadata = parsedResponse;
+        customParams.apiKey = customParams.accessToken + &#x27;-&#x27; + customParams.metadata.dc;
+        self.emit(&#x27;receivedMetadata&#x27;, customParams);
+      } else {
+        self.emit(&#x27;error&#x27;, {err: &#x27;Answer from MailChimp API does not contain a datacenter pointer.&#x27;, data:customParams});
+      }
+
+    }
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.handleOAuthResponse" id="apidoc.element.mailchimp.MailChimpOAuth.prototype.handleOAuthResponse">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>handleOAuthResponse
+        <span class="apidocSignatureSpan">(customParams)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleOAuthResponse = function (customParams) {
+  var self = this;
+  customParams = customParams || {};
+  if (typeof customParams.code !== &#x27;undefined&#x27;) {
+    self.emit(&#x27;receivedCode&#x27;, customParams);
+  } else {
+    self.emit(&#x27;error&#x27;, {err: &#x27;Received a request without a code.&#x27;, data:customParams});
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpOAuth.prototype.spawnServer" id="apidoc.element.mailchimp.MailChimpOAuth.prototype.spawnServer">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpOAuth.prototype.</span>spawnServer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spawnServer = function () {
+
+  var self = this;
+  var callback = function (request, response) {
+
+    if (request.method != &#x27;GET&#x27;) {
+      self.emit(&#x27;error&#x27;, {err: &#x27;Received something other than a GET request.&#x27;, data:undefined});
+      response.writeHead(500, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+      response.end();
+      return;
+    }
+
+    var requestUrl = url.parse(request.url);
+    var query = querystring.parse(requestUrl.query) || {};
+
+    if (typeof query.code !== &#x27;undefined&#x27;) {
+      self.emit(&#x27;receivedCode&#x27;, query);
+      if (self.finalUri) {
+        response.writeHead(302, {&#x27;Location&#x27;: self.finalUri});
+        response.end();
+      } else {
+        response.writeHead(204, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+        response.end();
+      }
+    } else {
+      self.emit(&#x27;error&#x27;, {err: &#x27;Received a request without a code.&#x27;, data:query});
+      response.writeHead(500, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+      response.end();
+    }
+  };
+  var server;
+
+
+  if (this.secure) {
+    if (this.secure.key &#x26;&#x26; this.secure.cert) {
+      const options = {
+        key: fs.readFileSync(this.secure.key),
+        cert: fs.readFileSync(this.secure.cert)
+      };
+      server = https.createServer(options, callback);
+    }
+    else {
+      throw new Error(&#x27;You have to specify the complete ssl credentials for this to work.with key and code&#x27;);
+    }
+  }
+
+  else
+    server = http.createServer(callback);
+
+  server.listen(this.httpPort);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.mailchimp.MailChimpWebhook" id="apidoc.module.mailchimp.MailChimpWebhook">module mailchimp.MailChimpWebhook</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpWebhook.MailChimpWebhook" id="apidoc.element.mailchimp.MailChimpWebhook.MailChimpWebhook">
+        function <span class="apidocSignatureSpan">mailchimp.</span>MailChimpWebhook
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MailChimpWebhook(options) {
+
+	var self = this;
+
+	if (!options)
+		options = {};
+
+	EventEmitter.call(this);
+
+	this.httpPort = options.port || 8100;
+	this.secret = options.secret || &#x27;&#x27;;
+	this.secure = options.secure || false;
+
+	this.allowedTypes = [
+	                     &#x27;subscribe&#x27;,
+	                     &#x27;unsubscribe&#x27;,
+	                     &#x27;profile&#x27;,
+	                     &#x27;upemail&#x27;,
+	                     &#x27;cleaned&#x27;,
+                         &#x27;campaign&#x27;
+	                    ];
+
+	var server = http.createServer(function (request, response) {
+
+		var requestBody = &#x27;&#x27;;
+		var requestUrl = url.parse(request.url);
+
+		if (self.secret !== &#x27;&#x27; &#x26;&#x26; requestUrl.pathname !== &#x27;/&#x27;+self.secret) {
+			self.emit(&#x27;error&#x27;, &#x27;Received a request with an invalid secret key.&#x27;);
+			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+		// Say &#x22;hi&#x22; to the webhook validator, the only request not sent via POST
+		if (request.headers[&#x27;user-agent&#x27;] === &#x27;MailChimp.com WebHook Validator&#x27;) {
+			response.writeHead(200, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+		if (request.method != &#x27;POST&#x27;) {
+			self.emit(&#x27;error&#x27;, &#x27;Received something other than a POST request.&#x27;);
+			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+			response.end();
+			return;
+		}
+
+        request.on(&#x27;data&#x27;, function (chunk) {
+        	requestBody += chunk;
+        });
+
+        request.on(&#x27;end&#x27;, function () {
+
+        	var payload = qs.parse(requestBody);
+    		var meta = { type : payload.type, fired_at : payload.fired_at };
+    		var data = payload.data;
+
+    		if (meta.type &#x26;&#x26; ~self.allowedTypes.indexOf(meta.type)) {
+    			self.emit(payload.type, data, meta);
+    			response.writeHead(200, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+    			response.end();
+    		} else {
+    			self.emit(&#x27;error&#x27;, &#x27;Received a request with an unknown type of payload.&#x27;);
+    			response.writeHead(500, { &#x27;Content-Type&#x27; : &#x27;text/plain&#x27; });
+    			response.end();
+    		}
+
+        });
+
+	});
+
+	if (this.secure)
+		server.setSecure(this.secure);
+
+	server.listen(this.httpPort);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.mailchimp.MailChimpWebhook.super_" id="apidoc.element.mailchimp.MailChimpWebhook.super_">
+        function <span class="apidocSignatureSpan">mailchimp.MailChimpWebhook.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
